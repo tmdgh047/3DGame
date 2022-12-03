@@ -6,7 +6,8 @@ using UnityEngine.UIElements;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    public Transform playerTr;
+	private GameScore gamescore;
+	public Transform playerTr;
     public Transform upTr;
     public Transform downTr;
     public int speed = 1;
@@ -24,6 +25,7 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 pos = transform.position;
 
 		IsPause = true;
+		gamescore = GameObject.Find("GameScore").GetComponent<GameScore>();
 	}
 
     // Update is called once per frame
@@ -33,8 +35,9 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             playerTr.transform.Translate(0, 0, speed);
+			gamescore.TotalScore(speed);
 
-        }
+		}
         if (Input.GetKeyDown(KeyCode.A))
         {
             playerTr.transform.Translate(-speed, 0, 0);
@@ -43,8 +46,9 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             playerTr.transform.Translate(0, 0, -speed);
+			gamescore.TotalScore(-speed);
 
-        }
+		}
         if (Input.GetKeyDown(KeyCode.D))
         {
             playerTr.transform.Translate(speed, 0, 0);
@@ -81,7 +85,8 @@ public class PlayerCtrl : MonoBehaviour
         if (other.tag == "GIFT")
         {
             gift += 1;
-            Debug.Log("선물: " + gift);
+			gamescore.BoxScore(1);
+			Debug.Log("선물: " + gift);
             GameObject.Destroy(other.gameObject);
         }
 
@@ -104,10 +109,13 @@ public class PlayerCtrl : MonoBehaviour
 
         if (other.tag == "CHIMNEY" && gift >= 1)
         {
-            gift -= 1;
-            score += 1;
-            Debug.Log("점수: " + score);
-        }
+			score = gift;
+			gift = 0;
+            gamescore.boxScore = 0;
+			gamescore.GiftScore.text = "선물 : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
+			Debug.Log("점수: " + score);
+			gamescore.TotalScore(score * 5);
+		}
     }
 
     //private void OnTriggerExit(Collider other)
