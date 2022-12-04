@@ -14,6 +14,7 @@ public class PlayerCtrl : MonoBehaviour
     protected LayerMask m_layerMask;
     public int gift = 0;
     public int score = 0;
+    private int currentZ = 0;
 
 	protected static bool IsPause;
 
@@ -114,7 +115,7 @@ public class PlayerCtrl : MonoBehaviour
             gamescore.boxScore = 0;
 			gamescore.GiftScore.text = "선물 : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
 			Debug.Log("점수: " + score);
-			gamescore.TotalScore(score * 5);
+			gamescore.BoxPointScore(score * 5);
 		}
     }
 
