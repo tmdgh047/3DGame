@@ -12,6 +12,7 @@ TagManager:
   - GIFT
   - CHIMNEY
   - ROOF
+  - CUBE1
   layers:
   - Default
   - TransparentFX
