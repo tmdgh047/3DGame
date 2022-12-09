@@ -91,15 +91,16 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (other.tag == "UP")
         {
-            playerTr.transform.position = downTr.transform.position;
+            Vector3 velo = Vector3.zero;
+            playerTr.transform.position = Vector3.Lerp(playerTr.transform.position, downTr.transform.position, Time.time* 1f);
             Debug.Log("Ãæµ¹");
-            playerTr.transform.Translate(0, 0.5f, 0);
+            //playerTr.transform.Translate(0, 0.5f, 0);
 
         }
         else if (other.tag == "DOWN")
         {
             //playerTr.transform.position = upTr.transform.position;
-            playerTr.transform.Translate(2f, 0, 0);
+            playerTr.transform.Translate(2f, 2f, 0);
 
         }
 
