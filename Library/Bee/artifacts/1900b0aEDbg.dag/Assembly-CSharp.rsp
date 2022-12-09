@@ -356,6 +356,7 @@
 "Assets/AurynSky/WinterArena/Scripts/Rotator.cs"
 "Assets/_STD_Frooger/Script/Component/Car.cs"
 "Assets/_STD_Frooger/Script/Component/CreMgr.cs"
+"Assets/_STD_Frooger/Script/Component/Destroyer.cs"
 "Assets/_STD_Frooger/Script/Component/EnvironmentMapManager.cs"
 "Assets/_STD_Frooger/Script/Component/FadeEffect.cs"
 "Assets/_STD_Frooger/Script/Component/Jump.cs"

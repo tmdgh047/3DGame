@@ -39,13 +39,11 @@ public class Road : MonoBehaviour
         //offsetpos.y = 0f;
         int randomVal = Random.Range(0, cloneTarget.Count);
 
-        if (randomVal == 0)
-        {
-            GameObject cloneObj = GameObject.Instantiate(cloneTarget[randomVal],
+        GameObject cloneObj = GameObject.Instantiate(cloneTarget[randomVal],
                 offsetpos,
                 genarationPos.rotation,
                 this.transform);
-            cloneObj.SetActive(true);
-        }
+        cloneObj.SetActive(true);
+
     }
 }

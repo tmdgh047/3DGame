@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8447619463996832678}
   - component: {fileID: 5971507491411070828}
   - component: {fileID: 8343290522999141544}
+  - component: {fileID: -4486697675598957936}
   m_Layer: 0
   m_Name: car4
-  m_TagString: Untagged
+  m_TagString: CAR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +99,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   rangeDestroy: 20
+--- !u!65 &-4486697675598957936
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5323239490834902713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.6, z: 1.2400001}
+  m_Center: {x: 0.059999987, y: 0.3, z: 0.020000013}

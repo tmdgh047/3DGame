@@ -63,6 +63,7 @@
     <Compile Include="Assets\_STD_Frooger\Script\Component\Car.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\UIMgr.cs" />
     <Compile Include="Assets\AurynSky\WinterArena\Scripts\ChestDemo.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\Radder.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\OptMgr.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\PlayerCtrl.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\CreMgr.cs" />
@@ -70,7 +71,7 @@
     <Compile Include="Assets\_STD_Frooger\Script\Component\Jump.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\RoadSpawn.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\PauseMenu.cs" />
-    <Compile Include="Assets\_STD_Frooger\Script\Component\Radder.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\Destroyer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AurynSky\WinterArena\READ ME.txt" />
