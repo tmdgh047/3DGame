@@ -32,22 +32,22 @@ public class PlayerCtrl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            playerTr.transform.Translate(0, 0, speed);
+            playerTr.transform.Translate(speed, 0, 0);
 
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            playerTr.transform.Translate(-speed, 0, 0);
+            playerTr.transform.Translate(0, 0, speed);
 
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            playerTr.transform.Translate(0, 0, -speed);
+            playerTr.transform.Translate(-speed, 0, 0);
 
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            playerTr.transform.Translate(speed, 0, 0);
+            playerTr.transform.Translate(0, 0, -speed);
 
         }
 
@@ -89,16 +89,17 @@ public class PlayerCtrl : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "UP" && Input.GetKeyDown(KeyCode.Space))
+        if (other.tag == "UP")
         {
             playerTr.transform.position = downTr.transform.position;
+            Debug.Log("Ãæµ¹");
             playerTr.transform.Translate(0, 0.5f, 0);
 
         }
-        else if (other.tag == "DOWN" && Input.GetKeyDown(KeyCode.Space))
+        else if (other.tag == "DOWN")
         {
-            playerTr.transform.position = upTr.transform.position;
-            playerTr.transform.Translate(0, 1f, 0);
+            //playerTr.transform.position = upTr.transform.position;
+            playerTr.transform.Translate(2f, 0, 0);
 
         }
 

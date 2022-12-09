@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{DD134316-0118-0B7B-ADEA-A6F31368251E}</ProjectGuid>
+    <ProjectGuid>{FA9178D6-5EB8-034D-FBFF-A344821AB08F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,18 +56,23 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AurynSky\WinterArena\Scripts\Rotator.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Road.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Spawn.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\FadeEffect.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Car.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\UIMgr.cs" />
+    <Compile Include="Assets\AurynSky\WinterArena\Scripts\ChestDemo.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\OptMgr.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\PlayerCtrl.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\CreMgr.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\EnvironmentMapManager.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Jump.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\RoadSpawn.cs" />
-    <Compile Include="Assets\_STD_Frooger\Script\Component\UIMgr.cs" />
-    <Compile Include="Assets\_STD_Frooger\Script\Component\OptMgr.cs" />
-    <Compile Include="Assets\_STD_Frooger\Script\Component\CreMgr.cs" />
-    <Compile Include="Assets\_STD_Frooger\Script\Component\FadeEffect.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\PauseMenu.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\AurynSky\WinterArena\READ ME.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

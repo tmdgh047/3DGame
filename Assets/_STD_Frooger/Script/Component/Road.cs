@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Road : MonoBehaviour
 {
-    public Car cloneTarget_0 = null;
-    public Car cloneTarget_1 = null;
-    public Car cloneTarget_2 = null;
+    public List<GameObject> cloneTarget = new List<GameObject>();
     public Transform genarationPos = null;
     public int generationPersent = 50;
 
@@ -39,27 +37,11 @@ public class Road : MonoBehaviour
         Transform clonePos = genarationPos;
         Vector3 offsetpos = clonePos.position;
         //offsetpos.y = 0f;
-        int randomVal = Random.Range(0, 3);
-        
-        if(randomVal == 0)
+        int randomVal = Random.Range(0, cloneTarget.Count);
+
+        if (randomVal == 0)
         {
-            GameObject cloneObj = GameObject.Instantiate(cloneTarget_0.gameObject,
-                offsetpos,
-                genarationPos.rotation,
-                this.transform);
-            cloneObj.SetActive(true);
-        }
-        else if(randomVal == 1)
-        {
-            GameObject cloneObj = GameObject.Instantiate(cloneTarget_1.gameObject,
-                offsetpos,
-                genarationPos.rotation,
-                this.transform);
-            cloneObj.SetActive(true);
-        }
-        else if(randomVal == 2)
-        {
-            GameObject cloneObj = GameObject.Instantiate(cloneTarget_2.gameObject,
+            GameObject cloneObj = GameObject.Instantiate(cloneTarget[randomVal],
                 offsetpos,
                 genarationPos.rotation,
                 this.transform);
