@@ -70,6 +70,7 @@
     <Compile Include="Assets\_STD_Frooger\Script\Component\Jump.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\RoadSpawn.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\PauseMenu.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\Radder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AurynSky\WinterArena\READ ME.txt" />

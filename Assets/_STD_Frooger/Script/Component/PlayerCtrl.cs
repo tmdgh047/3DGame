@@ -19,8 +19,8 @@ public class PlayerCtrl : MonoBehaviour
 	void Start()
     {
         playerTr = GetComponent<Transform>();
-        downTr = GameObject.FindWithTag("DOWN").GetComponent<Transform>();
-        upTr = GameObject.FindWithTag("UP").GetComponent<Transform>();
+        //downTr = GameObject.FindWithTag("DOWN").GetComponent<Transform>();
+        //upTr = GameObject.FindWithTag("UP").GetComponent<Transform>();
         Vector3 pos = transform.position;
 
 		IsPause = true;
@@ -85,24 +85,19 @@ public class PlayerCtrl : MonoBehaviour
             GameObject.Destroy(other.gameObject);
         }
 
+        if (other.tag == "UP")
+        {
+            playerTr.Translate(2f, 10f, 0);
+        }
+        if (other.tag == "DOWN")
+        {
+            //playerTr.Translate(2f, 2f, 0);
+        }
+
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "UP")
-        {
-            Vector3 velo = Vector3.zero;
-            playerTr.transform.position = Vector3.Lerp(playerTr.transform.position, downTr.transform.position, Time.time* 1f);
-            Debug.Log("Ãæµ¹");
-            //playerTr.transform.Translate(0, 0.5f, 0);
-
-        }
-        else if (other.tag == "DOWN")
-        {
-            //playerTr.transform.position = upTr.transform.position;
-            playerTr.transform.Translate(2f, 2f, 0);
-
-        }
 
         if (other.tag == "CHIMNEY" && gift >= 1)
         {
