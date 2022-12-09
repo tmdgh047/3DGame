@@ -367,6 +367,7 @@
 "Assets/_STD_Frooger/Script/Component/Road.cs"
 "Assets/_STD_Frooger/Script/Component/RoadSpawn.cs"
 "Assets/_STD_Frooger/Script/Component/Spawn.cs"
+"Assets/_STD_Frooger/Script/Component/Train.cs"
 "Assets/_STD_Frooger/Script/Component/UIMgr.cs"
 -langversion:9.0
 
