@@ -362,6 +362,7 @@
 "Assets/_STD_Frooger/Script/Component/Jump.cs"
 "Assets/_STD_Frooger/Script/Component/OptMgr.cs"
 "Assets/_STD_Frooger/Script/Component/PauseMenu.cs"
+"Assets/_STD_Frooger/Script/Component/PlayerCtrl.cs"
 "Assets/_STD_Frooger/Script/Component/Radder.cs"
 "Assets/_STD_Frooger/Script/Component/Road.cs"
 "Assets/_STD_Frooger/Script/Component/RoadSpawn.cs"

@@ -1,20 +1,238 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.8f1 (b30333d56e81) revision 11731763'; Using compiler version '192829333'; Build Type 'Release'
 OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'ko' Physical Memory: 16318 MB
-received signal from system: SIGSEGV
-Obtained 14 stack frames
-RtlLookupFunctionEntry returned NULL function. Aborting stack walk.
-0x00007ff614d1f07d (Unity) StackWalker::GetCurrentCallstack
-0x00007ff614d25d59 (Unity) StackWalker::ShowCallstack
-0x00007ff615c955f3 (Unity) GetStacktrace
-0x00007ff614d24d96 (Unity) winutils::PrintStackTrace
-0x00007ff614d1e6ac (Unity) winutils::CrashHandler::DefaultSignalHandler
-0x00007ff61707c1ce (Unity) seh_filter_exe
-0x00007ff61713baac (Unity) `__scrt_common_main_seh'::`1'::filt$0
-0x00007ff617048b40 (Unity) _C_specific_handler
-0x00007ff85d7b241f (ntdll) _chkstk
-0x00007ff85d7614a4 (ntdll) RtlRaiseException
-0x00007ff85d7b0f4e (ntdll) KiUserExceptionDispatcher
-0x00007ff61605bb44 (Unity) WorkerLicense::HasEntitlement
-<Missing stacktrace information>
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+D:/3DGame
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+65467
+Successfully changed project path to: D:/3DGame
+D:/3DGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 123.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.8f1 (b30333d56e81)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/3DGame/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     4043 MB
+    Driver:   31.0.15.1694
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56128
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007942 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 132.01 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.968 seconds
+Domain Reload Profiling:
+	ReloadAssembly (969ms)
+		BeginReloadAssembly (100ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (730ms)
+			LoadAssemblies (97ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (180ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (406ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (132ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (189ms)
+				ProcessInitializeOnLoadMethodAttributes (70ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005232 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\3DGame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\3DGame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.553 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1554ms)
+		BeginReloadAssembly (182ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (1190ms)
+			LoadAssemblies (139ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (431ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (77ms)
+			SetupLoadedEditorAssemblies (502ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (129ms)
+				ProcessInitializeOnLoadAttributes (318ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3356 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 27 unused Assets / (111.4 KB). Loaded Objects now: 3816.
+Memory consumption went from 116.1 MB to 116.0 MB.
+Total: 8.020700 ms (FindLiveObjects: 0.485500 ms CreateObjectMapping: 0.347600 ms MarkObjects: 6.931900 ms  DeleteObjects: 0.254100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 415924.333209 seconds.
+  path: Assets/dael/deco/box_yellow/New Material.mat
+  artifactKey: Guid(9f22378978415df4ba2b9674397ccaef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/deco/box_yellow/New Material.mat using Guid(9f22378978415df4ba2b9674397ccaef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d3f8a7ad68c35fdd6a3743e8784c64f') in 0.216591 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/dael/deco/box_yellow/box_yellow.fbx
+  artifactKey: Guid(33acfe3577d2f0d4c9c69222c3d864b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/deco/box_yellow/box_yellow.fbx using Guid(33acfe3577d2f0d4c9c69222c3d864b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b8f5c9f64aa78e2cf6317efb973fd47') in 0.084812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.622686 seconds.
+  path: Assets/dael/Home/Home.obj
+  artifactKey: Guid(2eb78af282198844b98d798fadf5951a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/Home/Home.obj using Guid(2eb78af282198844b98d798fadf5951a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62c3f8b84154119e13f71b8e86addf0e') in 0.003698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/dael/Home/Home.png
+  artifactKey: Guid(74721adff4313b54fb40b701dfcecfde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/Home/Home.png using Guid(74721adff4313b54fb40b701dfcecfde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23f1b303123d979132cb0908c997b10a') in 0.005031 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 118.769120 seconds.
+  path: Assets/dael/Chimeny 1/Chimney.obj
+  artifactKey: Guid(00adc7e65341a5141964af88cf22589d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/Chimeny 1/Chimney.obj using Guid(00adc7e65341a5141964af88cf22589d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a9f4f9a8ad026ffd08193ace02ff5c1') in 0.025824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/dael/Chimeny 1/Chimney.png
+  artifactKey: Guid(75f9b54947af8534ba2fe8e5aae44bfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/Chimeny 1/Chimney.png using Guid(75f9b54947af8534ba2fe8e5aae44bfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cae266113b52cca4b1de50e7ffa4586') in 0.017762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.820860 seconds.
+  path: Assets/dael/Chimeny/Chimney.obj
+  artifactKey: Guid(38de3ba7a1369754d831b3b6e712fa95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/Chimeny/Chimney.obj using Guid(38de3ba7a1369754d831b3b6e712fa95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d05ef040a442bda04cbc3e52a958466') in 0.001659 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/dael/Chimeny/Chimney.png
+  artifactKey: Guid(97632b037a434c548b72fa3dbc0da739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/Chimeny/Chimney.png using Guid(97632b037a434c548b72fa3dbc0da739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd73a681af79244d7e0415acfb35b6de6') in 0.009419 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.128357 seconds.
+  path: Assets/dael/deco/box_pink/box_pink.png
+  artifactKey: Guid(3d014421c69889d4d837557c7dea8b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/deco/box_pink/box_pink.png using Guid(3d014421c69889d4d837557c7dea8b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba5985437d1e1e3a59dc02999c172bfa') in 0.007084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.504444 seconds.
+  path: Assets/dael/etc/leaf/New Material.mat
+  artifactKey: Guid(bbf2ee8d362af4447a1bc415570a7fb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/etc/leaf/New Material.mat using Guid(bbf2ee8d362af4447a1bc415570a7fb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '678e76dca8794410e375e0cfca83ac59') in 0.009976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 116.888531 seconds.
+  path: Assets/dael/etc/box_yellow/box_yellow.png
+  artifactKey: Guid(edf9f86ddc0ca344abde31edaa68a04c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/etc/box_yellow/box_yellow.png using Guid(edf9f86ddc0ca344abde31edaa68a04c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05598d413734cc2cf8a57ebaf9ee1cd2') in 0.008441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 161.157948 seconds.
+  path: Assets/dael/etc/box_pink/box_pink.png
+  artifactKey: Guid(05638552824d3944b834bfe6b3067c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/etc/box_pink/box_pink.png using Guid(05638552824d3944b834bfe6b3067c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '329f3f44d312e582256e103ce1b0d870') in 0.008637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 73.526316 seconds.
+  path: Assets/dael/etc/box_pink/New Material.mat
+  artifactKey: Guid(03e3c079e135c4042a1ef81e515f0af0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dael/etc/box_pink/New Material.mat using Guid(03e3c079e135c4042a1ef81e515f0af0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '574c91cba1fa4aa4632eb11d5281d7a7') in 0.011570 seconds 

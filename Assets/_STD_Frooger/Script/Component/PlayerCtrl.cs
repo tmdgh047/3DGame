@@ -15,17 +15,17 @@ public class PlayerCtrl : MonoBehaviour
 
     private int movekeydown = 0;
 
-	protected static bool IsPause;
+    protected static bool IsPause;
 
-	void Start()
+    void Start()
     {
         playerTr = GetComponent<Transform>();
         //downTr = GameObject.FindWithTag("DOWN").GetComponent<Transform>();
         //upTr = GameObject.FindWithTag("UP").GetComponent<Transform>();
         Vector3 pos = transform.position;
 
-		IsPause = true;
-	}
+        IsPause = true;
+    }
 
     // Update is called once per frame
     void Update()
@@ -57,36 +57,36 @@ public class PlayerCtrl : MonoBehaviour
             StartCoroutine(kongmove());
         }
 
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			if (IsPause == true)
-			{
-				Time.timeScale = 0;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (IsPause == true)
+            {
+                Time.timeScale = 0;
                 speed = 0;
-				IsPause = false;
-				return;
-			}
-			if (IsPause == false)
-			{
-				Time.timeScale = 1;
+                IsPause = false;
+                return;
+            }
+            if (IsPause == false)
+            {
+                Time.timeScale = 1;
                 speed = 1;
-				IsPause = true;
-				return;
-			}
-		}
+                IsPause = true;
+                return;
+            }
+        }
     }
 
     IEnumerator kongmove()
     {
         yield return new WaitForSeconds(0.2f);
         if (movekeydown == 1)
-        playerTr.transform.Translate(speed, -0.2f, 0);
+            playerTr.transform.Translate(speed, -0.2f, 0);
         else if (movekeydown == 2)
-        playerTr.transform.Translate(0, -0.2f, speed);
+            playerTr.transform.Translate(0, -0.2f, speed);
         else if (movekeydown == 3)
-        playerTr.transform.Translate(-speed, -0.2f, 0);
+            playerTr.transform.Translate(-speed, -0.2f, 0);
         else if (movekeydown == 4)
-        playerTr.transform.Translate(0, -0.2f, -speed);
+            playerTr.transform.Translate(0, -0.2f, -speed);
     }
 
     private void OnTriggerEnter(Collider other)
