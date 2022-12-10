@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    private GameScore gamescore;
     public Transform playerTr;
     public Transform upTr;
     public Transform downTr;
@@ -20,6 +21,7 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         playerTr = GetComponent<Transform>();
+        gamescore = GameObject.Find("GameScore").GetComponent<GameScore>();
         //downTr = GameObject.FindWithTag("DOWN").GetComponent<Transform>();
         //upTr = GameObject.FindWithTag("UP").GetComponent<Transform>();
         Vector3 pos = transform.position;
@@ -37,7 +39,8 @@ public class PlayerCtrl : MonoBehaviour
             movekeydown = 1;
             StartCoroutine(kongmove());
 
-        }
+			gamescore.TotalScore(1);
+		}
         if (Input.GetKeyDown(KeyCode.A))
         {
             playerTr.transform.Translate(0, 0.2f, 0);
@@ -49,7 +52,9 @@ public class PlayerCtrl : MonoBehaviour
             playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 3;
             StartCoroutine(kongmove());
-        }
+
+			gamescore.TotalScore(-1);
+		}
         if (Input.GetKeyDown(KeyCode.D))
         {
             playerTr.transform.Translate(0, 0.2f, 0);
@@ -93,8 +98,9 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (other.tag == "GIFT")
         {
-            gift += 1;
-            Debug.Log("선물: " + gift);
+			gift += 1;
+			gamescore.BoxScore(1);
+			Debug.Log("선물: " + gift);
             GameObject.Destroy(other.gameObject);
         }
 
@@ -111,14 +117,16 @@ public class PlayerCtrl : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
-        if (other.tag == "CHIMNEY" && gift >= 1)
-        {
-            gift -= 1;
-            score += 1;
-            Debug.Log("점수: " + score);
-        }
-    }
+		if (other.tag == "CHIMNEY" && gift >= 1)
+		{
+			score = gift;
+			gift = 0;
+			gamescore.boxScore = 0;
+			gamescore.GiftScore.text = "선물 : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
+			Debug.Log("점수: " + score);
+			gamescore.BoxPointScore(score * 5);
+		}
+	}
 
     //private void OnTriggerExit(Collider other)
     //{
