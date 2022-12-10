@@ -15,6 +15,7 @@ TagManager:
   - CUBE1
   - CAR
   - OBSTACLE
+  - CRASH
   layers:
   - Default
   - TransparentFX

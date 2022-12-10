@@ -62,23 +62,7 @@ public class PlayerCtrl : MonoBehaviour
             StartCoroutine(kongmove());
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (IsPause == true)
-            {
-                Time.timeScale = 0;
-                speed = 0;
-                IsPause = false;
-                return;
-            }
-            if (IsPause == false)
-            {
-                Time.timeScale = 1;
-                speed = 1;
-                IsPause = true;
-                return;
-            }
-        }
+
     }
 
     IEnumerator kongmove()
@@ -98,11 +82,10 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (other.tag == "GIFT")
         {
-            Debug.Log("선물 닿음");
-			//gift += 1;
-			//gamescore.BoxScore(1);
-			//Debug.Log("선물: " + gift);
-   //         GameObject.Destroy(other.gameObject);
+            gift += 1;
+            gamescore.BoxScore(1);
+            Debug.Log("선물: " + gift);
+            GameObject.Destroy(other.gameObject);
         }
 
         if (other.tag == "UP")
@@ -115,9 +98,14 @@ public class PlayerCtrl : MonoBehaviour
         }
 
 
-		if (other.tag == "OBSTACLE")
+		if (other.tag == "OBSTACLE") //길 가로막는 장애물
 		{
             Debug.Log("장애물 닿음");
+		}
+
+		if (other.tag == "CAR") // 움직이는 장애물
+		{
+			Debug.Log("움직이는 애 닿음");
 		}
 	}
 
@@ -125,14 +113,13 @@ public class PlayerCtrl : MonoBehaviour
     {
 		if (other.tag == "CHIMNEY" && gift >= 1)
 		{
-            Debug.Log("선물반납 닿음");
-			//score = gift;
-			//gift = 0;
-			//gamescore.boxScore = 0;
-			//gamescore.GiftScore.text = "선물 : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
-			//Debug.Log("점수: " + score);
-			//gamescore.BoxPointScore(score * 5);
-		}
+            score = gift;
+            gift = 0;
+            gamescore.boxScore = 0;
+            gamescore.GiftScore.text = "선물 : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
+            Debug.Log("점수: " + score);
+            gamescore.BoxPointScore(score * 5);
+        }
 	}
 
     //private void OnTriggerExit(Collider other)
