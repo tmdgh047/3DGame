@@ -100,7 +100,7 @@ public class PlayerCtrl : MonoBehaviour
 
         if (other.tag == "UP")
         {
-            playerTr.Translate(1f, 10f, 0);
+            playerTr.Translate(0f, 10f, 0);
         }
         if (other.tag == "DOWN")
         {
