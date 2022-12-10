@@ -10,9 +10,10 @@ public class PlayerCtrl : MonoBehaviour
     public Transform upTr;
     public Transform downTr;
     public int speed = 1;
-    protected LayerMask m_layerMask;
     public int gift = 0;
     public int score = 0;
+
+    private int movekeydown = 0;
 
 	protected static bool IsPause;
 
@@ -32,23 +33,28 @@ public class PlayerCtrl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            playerTr.transform.Translate(speed, 0, 0);
+            playerTr.transform.Translate(0, 0.2f, 0);
+            movekeydown = 1;
+            StartCoroutine(kongmove());
 
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            playerTr.transform.Translate(0, 0, speed);
-
+            playerTr.transform.Translate(0, 0.2f, 0);
+            movekeydown = 2;
+            StartCoroutine(kongmove());
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            playerTr.transform.Translate(-speed, 0, 0);
-
+            playerTr.transform.Translate(0, 0.2f, 0);
+            movekeydown = 3;
+            StartCoroutine(kongmove());
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            playerTr.transform.Translate(0, 0, -speed);
-
+            playerTr.transform.Translate(0, 0.2f, 0);
+            movekeydown = 4;
+            StartCoroutine(kongmove());
         }
 
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -68,12 +74,19 @@ public class PlayerCtrl : MonoBehaviour
 				return;
 			}
 		}
-		Vector3 direction = Vector3.zero;
-        RaycastHit hitObj;
-        if (Physics.Raycast(this.transform.position, direction, out hitObj,1f, m_layerMask))
-        {
+    }
 
-        }
+    IEnumerator kongmove()
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (movekeydown == 1)
+        playerTr.transform.Translate(speed, -0.2f, 0);
+        else if (movekeydown == 2)
+        playerTr.transform.Translate(0, -0.2f, speed);
+        else if (movekeydown == 3)
+        playerTr.transform.Translate(-speed, -0.2f, 0);
+        else if (movekeydown == 4)
+        playerTr.transform.Translate(0, -0.2f, -speed);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -87,7 +100,7 @@ public class PlayerCtrl : MonoBehaviour
 
         if (other.tag == "UP")
         {
-            playerTr.Translate(2f, 10f, 0);
+            playerTr.Translate(1f, 10f, 0);
         }
         if (other.tag == "DOWN")
         {
