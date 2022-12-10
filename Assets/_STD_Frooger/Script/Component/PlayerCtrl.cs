@@ -98,10 +98,11 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (other.tag == "GIFT")
         {
-			gift += 1;
-			gamescore.BoxScore(1);
-			Debug.Log("선물: " + gift);
-            GameObject.Destroy(other.gameObject);
+            Debug.Log("선물 닿음");
+			//gift += 1;
+			//gamescore.BoxScore(1);
+			//Debug.Log("선물: " + gift);
+   //         GameObject.Destroy(other.gameObject);
         }
 
         if (other.tag == "UP")
@@ -113,18 +114,24 @@ public class PlayerCtrl : MonoBehaviour
             //playerTr.Translate(2f, 2f, 0);
         }
 
-    }
+
+		if (other.tag == "OBSTACLE")
+		{
+            Debug.Log("장애물 닿음");
+		}
+	}
 
     private void OnTriggerStay(Collider other)
     {
 		if (other.tag == "CHIMNEY" && gift >= 1)
 		{
-			score = gift;
-			gift = 0;
-			gamescore.boxScore = 0;
-			gamescore.GiftScore.text = "선물 : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
-			Debug.Log("점수: " + score);
-			gamescore.BoxPointScore(score * 5);
+            Debug.Log("선물반납 닿음");
+			//score = gift;
+			//gift = 0;
+			//gamescore.boxScore = 0;
+			//gamescore.GiftScore.text = "선물 : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
+			//Debug.Log("점수: " + score);
+			//gamescore.BoxPointScore(score * 5);
 		}
 	}
 

@@ -61,6 +61,7 @@
     <Compile Include="Assets\_STD_Frooger\Script\Component\Spawn.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\FadeEffect.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Car.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\GameScore.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\PlayerCtrl.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\UIMgr.cs" />
     <Compile Include="Assets\AurynSky\WinterArena\Scripts\ChestDemo.cs" />
@@ -71,7 +72,6 @@
     <Compile Include="Assets\_STD_Frooger\Script\Component\PauseMenu.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Destroyer.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Train.cs" />
-    <Compile Include="Assets\_STD_Frooger\Script\Component\GameScore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AurynSky\WinterArena\READ ME.txt" />
