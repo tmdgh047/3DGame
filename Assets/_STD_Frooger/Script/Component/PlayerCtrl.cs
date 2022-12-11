@@ -85,14 +85,14 @@ public class PlayerCtrl : MonoBehaviour
 IEnumerator kongmove()
     {
         yield return new WaitForSeconds(0.2f);
-        if (movekeydown == 1)
-            playerTr.transform.Translate(speed, -0.2f, 0);
-        else if (movekeydown == 2)
+        if (movekeydown == 1) //w
             playerTr.transform.Translate(0, -0.2f, speed);
-        else if (movekeydown == 3)
+        else if (movekeydown == 2) //a
             playerTr.transform.Translate(-speed, -0.2f, 0);
-        else if (movekeydown == 4)
+        else if (movekeydown == 3) //s
             playerTr.transform.Translate(0, -0.2f, -speed);
+        else if (movekeydown == 4) //d
+            playerTr.transform.Translate(speed, -0.2f, 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -114,15 +114,14 @@ IEnumerator kongmove()
             //playerTr.Translate(2f, 2f, 0);
         }
 
+		if (other.tag == "CAR") // 움직이는 장애물
+		{
+			Debug.Log("움직이는 애 닿음");
+		}
 
 		if (other.tag == "OBSTACLE") //길 가로막는 장애물
 		{
             Debug.Log("장애물 닿음");
-		}
-
-		if (other.tag == "CAR") // 움직이는 장애물
-		{
-			Debug.Log("움직이는 애 닿음");
 		}
 
 		if (other.tag == "SLED") // 썰매
@@ -142,6 +141,7 @@ IEnumerator kongmove()
             Debug.Log("점수: " + score);
             gamescore.BoxPointScore(score * 5);
         }
+
 	}
 
     //private void OnTriggerExit(Collider other)
