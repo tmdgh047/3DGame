@@ -16,6 +16,7 @@ TagManager:
   - CAR
   - OBSTACLE
   - CRASH
+  - SLED
   layers:
   - Default
   - TransparentFX

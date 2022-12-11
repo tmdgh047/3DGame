@@ -26,7 +26,7 @@ public class PlayerCtrl : MonoBehaviour
         //upTr = GameObject.FindWithTag("UP").GetComponent<Transform>();
         Vector3 pos = transform.position;
 
-        IsPause = true;
+        IsPause = false;
     }
 
     // Update is called once per frame
@@ -39,8 +39,8 @@ public class PlayerCtrl : MonoBehaviour
             movekeydown = 1;
             StartCoroutine(kongmove());
 
-			gamescore.TotalScore(1);
-		}
+            gamescore.TotalScore(1);
+        }
         if (Input.GetKeyDown(KeyCode.A))
         {
             playerTr.transform.Translate(0, 0.2f, 0);
@@ -53,8 +53,8 @@ public class PlayerCtrl : MonoBehaviour
             movekeydown = 3;
             StartCoroutine(kongmove());
 
-			gamescore.TotalScore(-1);
-		}
+            gamescore.TotalScore(-1);
+        }
         if (Input.GetKeyDown(KeyCode.D))
         {
             playerTr.transform.Translate(0, 0.2f, 0);
@@ -62,10 +62,27 @@ public class PlayerCtrl : MonoBehaviour
             StartCoroutine(kongmove());
         }
 
+  //      if (Input.GetKeyDown(KeyCode.Escape)) //일시정지
+  //      {
+  //          if(IsPause==false)
+  //          {
+  //              Time.timeScale = 0;
+  //              speed = 0;
+  //              IsPause = true;
+  //              return;
+  //          }
+  //          if(IsPause==true)
+  //          {
+		//		Time.timeScale = 1;
+  //              speed = 1;
+		//		IsPause = false;
+		//		return;
+		//	}
+		//}
 
-    }
+}
 
-    IEnumerator kongmove()
+IEnumerator kongmove()
     {
         yield return new WaitForSeconds(0.2f);
         if (movekeydown == 1)
@@ -106,6 +123,11 @@ public class PlayerCtrl : MonoBehaviour
 		if (other.tag == "CAR") // 움직이는 장애물
 		{
 			Debug.Log("움직이는 애 닿음");
+		}
+
+		if (other.tag == "SLED") // 썰매
+		{
+			Debug.Log("썰매 닿음. 게임 엔딩");
 		}
 	}
 
