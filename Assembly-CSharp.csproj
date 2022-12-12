@@ -68,6 +68,7 @@
     <Compile Include="Assets\_STD_Frooger\Script\Component\Radder.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\EnvironmentMapManager.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Jump.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\BtnMgr.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\RoadSpawn.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\MenuCanvas.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Destroyer.cs" />

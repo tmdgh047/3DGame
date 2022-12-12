@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class GameScore : PlayerCtrl
+public class GameScore : MonoBehaviour
 {
 	public Text txtScore; //플레이씬 점수
 	public Text Over_txtScore; //게임오버 최종점수
@@ -35,7 +35,7 @@ public class GameScore : PlayerCtrl
 		}
 		Total_highScore();
 
-		txtScore.text = " : <color=#ff0000>" + highScore.ToString() + "</color>";
+		txtScore.text = " :<color=#000000>" + highScore.ToString() + "</color>";
 		Over_txtScore.text = txtScore.text;		
 	}
 
@@ -46,7 +46,7 @@ public class GameScore : PlayerCtrl
 			tot_HighScore = highScore;
 		}
 
-		Tot_highScore.text = " : <color=#ff0000>" + tot_HighScore.ToString() + "</color>";
+		Tot_highScore.text = " :<color=#000000>" + tot_HighScore.ToString() + "</color>";
 
 		Over_tot_highScore.text = Tot_highScore.text;
 		Start_tot_highScore.text = Tot_highScore.text;
@@ -63,7 +63,7 @@ public class GameScore : PlayerCtrl
 	public void BoxScore(int gift) //선물 갯수 출력
 	{
 		boxScore += gift;
-		GiftScore.text = " : <color=#ff0000>" + boxScore.ToString() + "</color>";
+		GiftScore.text = " :<color=#000000>" + boxScore.ToString() + "</color>";
 	}
 	public void BoxPointScore(int giftscore) //선물 점수 증가
 	{

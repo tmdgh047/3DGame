@@ -25,4 +25,5 @@ public class UIMgr : MonoBehaviour
 	{
 		Application.Quit();
 	}
+
 }

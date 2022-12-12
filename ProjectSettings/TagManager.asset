@@ -17,6 +17,7 @@ TagManager:
   - OBSTACLE
   - CRASH
   - SLED
+  - Train
   layers:
   - Default
   - TransparentFX

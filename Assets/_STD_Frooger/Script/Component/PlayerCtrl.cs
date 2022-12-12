@@ -12,17 +12,28 @@ public class PlayerCtrl : MonoBehaviour
     public Transform upTr;
     public Transform downTr;
 
+    public Transform currentTr;
+
+    public AudioClip audioGift;
+    public AudioClip audioTrain;
+    public AudioClip audioCar;
+
+    AudioSource audioSource;
+
 	public int speed = 1;
     public int gift = 0;
     public int score = 0;
 
     private int movekeydown = 0;
 
-    protected static bool IsPause;
-	protected static bool IsGamePlay;
-	protected static bool IsGameOver;
-
-	void Start()
+	public static bool IsGamePlay;
+	public static bool IsGameOver;
+	public static bool IsPause;
+    private void Awake()
+    {
+		audioSource = GetComponent<AudioSource>();
+    }
+    void Start()
     {
         playerTr = GetComponent<Transform>();
         gamescore = GameObject.Find("GameScore").GetComponent<GameScore>();
@@ -30,7 +41,8 @@ public class PlayerCtrl : MonoBehaviour
         //upTr = GameObject.FindWithTag("UP").GetComponent<Transform>();
         Vector3 pos = transform.position;
 
-        IsPause = true;
+
+		IsPause = false;
         IsGamePlay = true;
         IsGameOver = false;
 	}
@@ -60,7 +72,6 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
 			IsGamePlay = false;
-
 			playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 3;
             StartCoroutine(kongmove());
@@ -78,27 +89,32 @@ public class PlayerCtrl : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space)) //일시정지
 		{
-		//if (IsPause == false)
-		//{
-		//	IsPause = true;
-		//             return;
-		//}
-		//else
-		//{
-		//	IsPause = false;
-		//	return;
-		//}
-	}
+            Debug.Log(transform.name);
+            if (IsPause == false)
+            {
+				IsPause = true;
+            }
+            else if (IsPause == true)
+            {
+				IsPause = false;
+            }
+        }
 
 
-		if (IsGamePlay==true)
+        if(IsGameOver==true&&Input.anyKeyDown) //게임오버 -> 재시작
         {
-            Debug.Log("게임진행중");
-        }
-        else if(IsGamePlay==false)
-        {
-            Debug.Log("게임끝남");
-        }
+            IsGameOver = false;
+            IsGamePlay = false;
+
+			playerTr.position = currentTr.position;
+
+            score = 0;
+			gamescore.highScore = 0;
+            gamescore.totScore = 0;
+			gamescore.txtScore.text = " :<color=#000000>" + gamescore.highScore.ToString() + "</color>";
+			gift = 0;
+			gamescore.GiftScore.text = " :<color=#000000>" + gift.ToString() + "</color>";
+		}
 
     }
 
@@ -115,15 +131,18 @@ IEnumerator kongmove()
             playerTr.transform.Translate(speed, -0.2f, 0);
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
 		if (other.tag == "GIFT")
         {
             gift += 1;
             gamescore.BoxScore(1);
-			Debug.Log("선물: " + gift);
             GameObject.Destroy(other.gameObject);
-        }
+
+            audioSource.clip = audioGift;
+            audioSource.Play();
+		}
 
         if (other.tag == "UP")
         {
@@ -136,18 +155,26 @@ IEnumerator kongmove()
 
 		if (other.tag == "CAR") // 움직이는 장애물
 		{
-            IsGameOver = true;
-			Debug.Log("움직이는 애 닿음");
+			IsGameOver = true;
+			audioSource.clip = audioCar; 
+			audioSource.Play();
+		}
+        if(other.tag == "Train")
+        {
+			IsGameOver = true;
+			audioSource.clip = audioTrain;
+			audioSource.Play();
 		}
 
 		if (other.tag == "OBSTACLE") //길 가로막는 장애물
 		{
-			Debug.Log("장애물 닿음");
 		}
 
 		if (other.tag == "SLED") // 썰매
 		{
-			Debug.Log("썰매 닿음. 게임 엔딩");
+            IsGameOver = true;
+			audioSource.clip = audioTrain;
+			audioSource.Play();
 		}
 	}
 
@@ -158,10 +185,12 @@ IEnumerator kongmove()
             score = gift;
             gift = 0;
             gamescore.boxScore = 0;
-            gamescore.GiftScore.text = " : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
-            Debug.Log("점수: " + score);
+            gamescore.GiftScore.text = " :<color=#000000>" + gamescore.boxScore.ToString() + "</color>";
             gamescore.BoxPointScore(score * 5);
-        }
+
+			audioSource.clip = audioGift;
+			audioSource.Play();
+		}
 
 	}
 

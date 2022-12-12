@@ -354,6 +354,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/AurynSky/WinterArena/Scripts/ChestDemo.cs"
 "Assets/AurynSky/WinterArena/Scripts/Rotator.cs"
+"Assets/_STD_Frooger/Script/Component/BtnMgr.cs"
 "Assets/_STD_Frooger/Script/Component/Car.cs"
 "Assets/_STD_Frooger/Script/Component/Destroyer.cs"
 "Assets/_STD_Frooger/Script/Component/EnvironmentMapManager.cs"
