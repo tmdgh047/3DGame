@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 157
+  controlID: 29
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 146
+  controlID: 93
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 123
+  controlID: 94
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -621,9 +621,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 31.175743, y: 8.927445, z: 12.849934}
+    m_Target: {x: 32.57497, y: 31.483444, z: 2.48761}
     speed: 2
-    m_Value: {x: 31.175743, y: 8.927445, z: 12.849934}
+    m_Value: {x: 32.57497, y: 31.483444, z: 2.48761}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -670,9 +670,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.07812157, y: -0.2724727, z: 0.022219013, w: -0.9587243}
+    m_Target: {x: 0.11455566, y: -0.2354697, z: -0.027943535, w: -0.964697}
     speed: 2
-    m_Value: {x: -0.07812157, y: -0.2724727, z: 0.022219015, w: -0.9587243}
+    m_Value: {x: 0.11455566, y: -0.23546968, z: -0.027943535, w: -0.96469694}
   m_Size:
     m_Target: 30.883724
     speed: 2
@@ -891,13 +891,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Real Stars Skybox/StarSkybox04
+    - Assets/_STD_Frooger/Image
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Real Stars Skybox/StarSkybox04
+  - Assets/_STD_Frooger/Image
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\mvpal\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uAC15\uC758\uC790\uB8CC
     2-2\\3D\uAC8C\uC784\uC81C\uC791\\3DGame"
@@ -905,8 +905,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 20660000
-    m_LastClickedID: 26144
+    m_SelectedIDs: f0650000
+    m_LastClickedID: 26096
     m_ExpandedIDs: 00000000d4650000d6650000d8650000da650000dc650000de650000e0650000e2650000e465000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -962,7 +962,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 000000006a940000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
