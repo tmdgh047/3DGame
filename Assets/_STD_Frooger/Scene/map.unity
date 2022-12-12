@@ -8491,7 +8491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.3, y: -7.8}
+  m_AnchoredPosition: {x: 47.26, y: -7.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697447034
@@ -14815,11 +14815,12 @@ MonoBehaviour:
   txtScore: {fileID: 182610997}
   Over_txtScore: {fileID: 1095236582}
   GiftScore: {fileID: 1150030349}
-  m_highScore: {fileID: 1520205202}
+  Tot_highScore: {fileID: 1520205202}
+  Over_tot_highScore: {fileID: 1918486234}
+  Start_tot_highScore: {fileID: 697447034}
   totScore: 0
   highScore: 0
   boxScore: 0
-  tot_HighScore: 0
 --- !u!4 &1188397981
 Transform:
   m_ObjectHideFlags: 0
@@ -18353,13 +18354,14 @@ GameObject:
   - component: {fileID: 1475638390}
   - component: {fileID: 1475638392}
   - component: {fileID: 1475638391}
+  - component: {fileID: 1475638393}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1475638390
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18378,7 +18380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.3, y: -6.5}
+  m_AnchoredPosition: {x: -11.3, y: 19}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1475638391
@@ -18416,6 +18418,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475638389}
   m_CullTransparentMesh: 1
+--- !u!95 &1475638393
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475638389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80eba2f118458594995ace02b6873ea9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1476243999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 19cce868d0a981e41950dce952f6f1da, type: 3}

@@ -7,38 +7,59 @@ public class GameScore : PlayerCtrl
 	public Text txtScore; //플레이씬 점수
 	public Text Over_txtScore; //게임오버 최종점수
 	public Text GiftScore; //선물 점수
-	public Text m_highScore; //최고점수
+	public Text Tot_highScore; //최고점수
+	public Text Over_tot_highScore; //게임오버 최고점수
+	public Text Start_tot_highScore; //게임시작 최고점수
 
 	public int totScore = 0;
 	public int highScore = 0;
 	public int boxScore = 0;
-	public int tot_HighScore = 0;
+
+	private int tot_HighScore = 0;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		TotalScore(0);
 		BoxScore(0);
+		tot_HighScore = PlayerPrefs.GetInt("HIGH_SCORE1",0); 
+		Total_highScore();
 	}
 	// Update is called once per frame
-	public void TotalScore(int score) //최종 점수
+	public void TotalScore(int score) //현재 점수
 	{
-		totScore += score;
+		totScore += score; 
 		if (highScore <= totScore)
 		{
 			highScore = totScore;
 		}
+		Total_highScore();
+
 		txtScore.text = " : <color=#ff0000>" + highScore.ToString() + "</color>";
-		Over_txtScore.text = txtScore.text;
+		Over_txtScore.text = txtScore.text;		
 	}
-	public void Total_highScore(int score) //최고기록 점수
+
+	public void Total_highScore() //최고기록 점수
 	{
-		if (tot_HighScore< highScore) //최고기록 갱신의 경우
-		{
+		if (tot_HighScore <= highScore)
+		{			
 			tot_HighScore = highScore;
 		}
-		Over_txtScore.text = " : <color=#ff0000>" + tot_HighScore.ToString() + "</color>";
+
+		Tot_highScore.text = " : <color=#ff0000>" + tot_HighScore.ToString() + "</color>";
+
+		Over_tot_highScore.text = Tot_highScore.text;
+		Start_tot_highScore.text = Tot_highScore.text;
+
+		PlayerPrefs.SetInt("HIGH_SCORE1", tot_HighScore);
+		if(PlayerPrefs.HasKey("HIGH_SCORE1"))
+		{
+			Debug.Log(PlayerPrefs.GetInt("HIGH_SCORE1", 0));
+
+		}
 	}
+
+
 	public void BoxScore(int gift) //선물 갯수 출력
 	{
 		boxScore += gift;

@@ -47,7 +47,7 @@ public class PlayerCtrl : MonoBehaviour
             StartCoroutine(kongmove());
 
             gamescore.TotalScore(1);
-        }
+		}
         if (Input.GetKeyDown(KeyCode.A))
         {
 			IsGamePlay = false;
@@ -56,6 +56,7 @@ public class PlayerCtrl : MonoBehaviour
             movekeydown = 2;
             StartCoroutine(kongmove());
         }
+
         if (Input.GetKeyDown(KeyCode.S))
         {
 			IsGamePlay = false;
@@ -65,7 +66,7 @@ public class PlayerCtrl : MonoBehaviour
             StartCoroutine(kongmove());
 
             gamescore.TotalScore(-1);
-        }
+		}
         if (Input.GetKeyDown(KeyCode.D))
         {
 			IsGamePlay = false;
@@ -116,11 +117,11 @@ IEnumerator kongmove()
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "GIFT")
+		if (other.tag == "GIFT")
         {
             gift += 1;
             gamescore.BoxScore(1);
-            Debug.Log("선물: " + gift);
+			Debug.Log("선물: " + gift);
             GameObject.Destroy(other.gameObject);
         }
 
@@ -157,7 +158,7 @@ IEnumerator kongmove()
             score = gift;
             gift = 0;
             gamescore.boxScore = 0;
-            gamescore.GiftScore.text = "선물 : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
+            gamescore.GiftScore.text = " : <color=#ff0000>" + gamescore.boxScore.ToString() + "</color>";
             Debug.Log("점수: " + score);
             gamescore.BoxPointScore(score * 5);
         }
