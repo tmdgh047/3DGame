@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CreUI.unity
     guid: 0d379c6af79d12145a8206543f1f4acd
   - enabled: 1
+    path: Assets/_STD_Frooger/Scene/map.unity
+    guid: 5eb913f6187c8ec4bb754d7635b00e13
+  - enabled: 1
+    path: Assets/_STD_Frooger/Scene/Practice.unity
+    guid: 28ef393b18b55744f9eb697dd1f866bb
+  - enabled: 1
     path: Assets/Scenes/OptUI.unity
     guid: 438b90b096d4c5244913d7eacac49948
   - enabled: 1

@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-
+using UnityEngine.SceneManagement;
 public class PlayerCtrl : MonoBehaviour
 {
     private GameScore gamescore;
@@ -19,8 +19,8 @@ public class PlayerCtrl : MonoBehaviour
     private int movekeydown = 0;
 
     protected static bool IsPause;
-    public GameObject Pause;
 	protected static bool IsGamePlay;
+	protected static bool IsGameOver;
 
 	void Start()
     {
@@ -30,8 +30,9 @@ public class PlayerCtrl : MonoBehaviour
         //upTr = GameObject.FindWithTag("UP").GetComponent<Transform>();
         Vector3 pos = transform.position;
 
-        IsPause = false;
-        IsGamePlay = false;
+        IsPause = true;
+        IsGamePlay = true;
+        IsGameOver = false;
 	}
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            IsGamePlay = true;
+            IsGamePlay = false;
 
 			playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 1;
@@ -49,7 +50,7 @@ public class PlayerCtrl : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-			IsGamePlay = true;
+			IsGamePlay = false;
 
 			playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 2;
@@ -57,7 +58,7 @@ public class PlayerCtrl : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-			IsGamePlay = true;
+			IsGamePlay = false;
 
 			playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 3;
@@ -67,35 +68,26 @@ public class PlayerCtrl : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-			IsGamePlay = true;
+			IsGamePlay = false;
 
 			playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 4;
             StartCoroutine(kongmove());
         }
 
-		if (Input.GetKeyDown(KeyCode.Escape)) //일시정지
+		if (Input.GetKeyDown(KeyCode.Space)) //일시정지
 		{
-			if (IsPause == false)
-			{
-				IsPause = true;
-                
-			}
-			else if (IsPause == true)
-			{
-				IsPause = false;
-                
-			}
-		}
-
-        if(IsPause==true)
-        {
-			Pause.SetActive(true);
-		}
-        else if (IsPause==false)
-        {
-			Pause.SetActive(false);
-		}
+		//if (IsPause == false)
+		//{
+		//	IsPause = true;
+		//             return;
+		//}
+		//else
+		//{
+		//	IsPause = false;
+		//	return;
+		//}
+	}
 
 
 		if (IsGamePlay==true)
@@ -143,6 +135,7 @@ IEnumerator kongmove()
 
 		if (other.tag == "CAR") // 움직이는 장애물
 		{
+            IsGameOver = true;
 			Debug.Log("움직이는 애 닿음");
 		}
 

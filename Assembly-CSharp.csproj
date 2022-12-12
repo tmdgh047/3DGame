@@ -71,6 +71,7 @@
     <Compile Include="Assets\_STD_Frooger\Script\Component\RoadSpawn.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Destroyer.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Train.cs" />
+    <Compile Include="Assets\_STD_Frooger\Script\Component\MenuCanvas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AurynSky\WinterArena\READ ME.txt" />

@@ -360,6 +360,7 @@
 "Assets/_STD_Frooger/Script/Component/FadeEffect.cs"
 "Assets/_STD_Frooger/Script/Component/GameScore.cs"
 "Assets/_STD_Frooger/Script/Component/Jump.cs"
+"Assets/_STD_Frooger/Script/Component/MenuCanvas.cs"
 "Assets/_STD_Frooger/Script/Component/PlayerCtrl.cs"
 "Assets/_STD_Frooger/Script/Component/Radder.cs"
 "Assets/_STD_Frooger/Script/Component/Road.cs"
