@@ -69,7 +69,6 @@
     <Compile Include="Assets\_STD_Frooger\Script\Component\EnvironmentMapManager.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Jump.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\RoadSpawn.cs" />
-    <Compile Include="Assets\_STD_Frooger\Script\Component\PauseMenu.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Destroyer.cs" />
     <Compile Include="Assets\_STD_Frooger\Script\Component\Train.cs" />
   </ItemGroup>

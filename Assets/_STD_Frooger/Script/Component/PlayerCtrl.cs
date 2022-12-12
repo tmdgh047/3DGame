@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class PlayerCtrl : MonoBehaviour
@@ -10,15 +11,18 @@ public class PlayerCtrl : MonoBehaviour
     public Transform playerTr;
     public Transform upTr;
     public Transform downTr;
-    public int speed = 1;
+
+	public int speed = 1;
     public int gift = 0;
     public int score = 0;
 
     private int movekeydown = 0;
 
     protected static bool IsPause;
+    public GameObject Pause;
+	protected static bool IsGamePlay;
 
-    void Start()
+	void Start()
     {
         playerTr = GetComponent<Transform>();
         gamescore = GameObject.Find("GameScore").GetComponent<GameScore>();
@@ -27,15 +31,17 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 pos = transform.position;
 
         IsPause = false;
-    }
+        IsGamePlay = false;
+	}
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.W))
         {
-            playerTr.transform.Translate(0, 0.2f, 0);
+            IsGamePlay = true;
+
+			playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 1;
             StartCoroutine(kongmove());
 
@@ -43,13 +49,17 @@ public class PlayerCtrl : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            playerTr.transform.Translate(0, 0.2f, 0);
+			IsGamePlay = true;
+
+			playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 2;
             StartCoroutine(kongmove());
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            playerTr.transform.Translate(0, 0.2f, 0);
+			IsGamePlay = true;
+
+			playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 3;
             StartCoroutine(kongmove());
 
@@ -57,30 +67,47 @@ public class PlayerCtrl : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            playerTr.transform.Translate(0, 0.2f, 0);
+			IsGamePlay = true;
+
+			playerTr.transform.Translate(0, 0.2f, 0);
             movekeydown = 4;
             StartCoroutine(kongmove());
         }
 
-  //      if (Input.GetKeyDown(KeyCode.Escape)) //일시정지
-  //      {
-  //          if(IsPause==false)
-  //          {
-  //              Time.timeScale = 0;
-  //              speed = 0;
-  //              IsPause = true;
-  //              return;
-  //          }
-  //          if(IsPause==true)
-  //          {
-		//		Time.timeScale = 1;
-  //              speed = 1;
-		//		IsPause = false;
-		//		return;
-		//	}
-		//}
+		if (Input.GetKeyDown(KeyCode.Escape)) //일시정지
+		{
+			if (IsPause == false)
+			{
+				IsPause = true;
+                
+			}
+			else if (IsPause == true)
+			{
+				IsPause = false;
+                
+			}
+		}
 
-}
+        if(IsPause==true)
+        {
+			Pause.SetActive(true);
+		}
+        else if (IsPause==false)
+        {
+			Pause.SetActive(false);
+		}
+
+
+		if (IsGamePlay==true)
+        {
+            Debug.Log("게임진행중");
+        }
+        else if(IsGamePlay==false)
+        {
+            Debug.Log("게임끝남");
+        }
+
+    }
 
 IEnumerator kongmove()
     {
@@ -121,7 +148,7 @@ IEnumerator kongmove()
 
 		if (other.tag == "OBSTACLE") //길 가로막는 장애물
 		{
-            Debug.Log("장애물 닿음");
+			Debug.Log("장애물 닿음");
 		}
 
 		if (other.tag == "SLED") // 썰매
