@@ -55,6 +55,7 @@ public class PlayerCtrl : MonoBehaviour
             IsGamePlay = false;
 
 			playerTr.transform.Translate(0, 0.2f, 0);
+            transform.rotation = Quaternion.Euler(0, 90, 0);
             movekeydown = 1;
             StartCoroutine(kongmove());
 
@@ -65,6 +66,7 @@ public class PlayerCtrl : MonoBehaviour
 			IsGamePlay = false;
 
 			playerTr.transform.Translate(0, 0.2f, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             movekeydown = 2;
             StartCoroutine(kongmove());
         }
@@ -73,6 +75,7 @@ public class PlayerCtrl : MonoBehaviour
         {
 			IsGamePlay = false;
 			playerTr.transform.Translate(0, 0.2f, 0);
+            transform.rotation = Quaternion.Euler(0, -90, 0);
             movekeydown = 3;
             StartCoroutine(kongmove());
 
@@ -83,6 +86,7 @@ public class PlayerCtrl : MonoBehaviour
 			IsGamePlay = false;
 
 			playerTr.transform.Translate(0, 0.2f, 0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             movekeydown = 4;
             StartCoroutine(kongmove());
         }
@@ -124,11 +128,11 @@ IEnumerator kongmove()
         if (movekeydown == 1) //w
             playerTr.transform.Translate(0, -0.2f, speed);
         else if (movekeydown == 2) //a
-            playerTr.transform.Translate(-speed, -0.2f, 0);
+            playerTr.transform.Translate(0, -0.2f, speed);
         else if (movekeydown == 3) //s
-            playerTr.transform.Translate(0, -0.2f, -speed);
+            playerTr.transform.Translate(0, -0.2f, speed);
         else if (movekeydown == 4) //d
-            playerTr.transform.Translate(speed, -0.2f, 0);
+            playerTr.transform.Translate(0, -0.2f, speed);
     }
 
 
